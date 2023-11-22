@@ -14,7 +14,7 @@ Or you can just download the file [`utils-full.min.js`](dist/utils-full.min.js) 
 ```
 
 ## Usage
-The following code is a simple example of using `Utils-Full-JS`, you can also find from **[Demo](carry0987.github.io/Utils-Full-JS/)**:
+The following code is a simple example of using `Utils-Full-JS`, you can also find it from **[Demo](carry0987.github.io/Utils-Full-JS/)**:
 ```js
 let util = new Utils({
     ll: (msg) => console.log(msg)
