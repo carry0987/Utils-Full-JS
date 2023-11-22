@@ -1,0 +1,44 @@
+{
+  "name": "@carry0987/utils-full",
+  "version": "1.0.0",
+  "description": "A full library for Utils modules, include all methods from @carry0987/utils",
+  "type": "module",
+  "main": "dist/utils-full.min.js",
+  "module": "dist/utils-full.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "rollup --config rollup.config.js --environment BUILD:js",
+    "build:dts": "rollup --config rollup.config.js --environment BUILD:dts",
+    "build": "npm run build:js && npm run build:dts"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carry0987/Utils-Full-JS.git"
+  },
+  "keywords": [
+    "util",
+    "utils"
+  ],
+  "author": "carry0987",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carry0987/Utils-Full-JS/issues"
+  },
+  "homepage": "https://github.com/carry0987/Utils-Full-JS#readme",
+  "devDependencies": {
+    "@carry0987/utils": "^3.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.5.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2"
+  }
+}
