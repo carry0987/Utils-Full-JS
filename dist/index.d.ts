@@ -17,7 +17,7 @@ declare class Utils {
     static compatInsertRule: typeof UtilsModule.compatInsertRule;
     static removeStylesheet: typeof UtilsModule.removeStylesheet;
     static generateRandom: typeof UtilsModule.generateRandom;
-    static getUrlParameter: typeof UtilsModule.getUrlParameter;
+    static getUrlParam: typeof UtilsModule.getUrlParam;
     static getElem: typeof UtilsModule.domUtils.getElem;
     static createElem: typeof UtilsModule.domUtils.createElem;
     static insertAfter: typeof UtilsModule.domUtils.insertAfter;

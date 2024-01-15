@@ -1,4 +1,4 @@
-const version = '3.1.3';
+const version = '3.2.0';
 
 function reportError(...error) {
     console.error(...error);
@@ -180,7 +180,7 @@ function isEmpty(str) {
 function generateRandom(length = 8) {
     return Math.random().toString(36).substring(2, 2 + length);
 }
-function getUrlParameter(sParam, url = window.location.href) {
+function getUrlParam(sParam, url = window.location.href) {
     const isHashParam = sParam.startsWith('#');
     let urlPart;
     if (isHashParam) {
@@ -241,7 +241,7 @@ function removeSessionValue(key) {
 function setCookie(name, value, options) {
     let cookieString = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';';
     const defaultOptions = {
-        expires: new Date(Date.now() + 86400000),
+        expires: new Date(Date.now() + 86400000), // 1 day
         path: '/',
         secure: false,
         sameSite: 'Lax'
@@ -454,7 +454,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.0.2';
+    static version = '1.1.0';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -472,7 +472,7 @@ class Utils {
     static compatInsertRule = compatInsertRule;
     static removeStylesheet = removeStylesheet;
     static generateRandom = generateRandom;
-    static getUrlParameter = getUrlParameter;
+    static getUrlParam = getUrlParam;
     // domUtils
     static getElem = domUtils.getElem;
     static createElem = domUtils.createElem;
