@@ -1,4 +1,4 @@
-const version = '3.2.0';
+const version = '3.2.3';
 
 function reportError(...error) {
     console.error(...error);
@@ -75,8 +75,8 @@ function removeClass(ele, className) {
     ele.classList.remove(className);
     return ele;
 }
-function toggleClass(ele, className) {
-    ele.classList.toggle(className);
+function toggleClass(ele, className, force) {
+    ele.classList.toggle(className, force);
     return ele;
 }
 function hasClass(ele, className) {
@@ -454,7 +454,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.0';
+    static version = '1.1.1';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
