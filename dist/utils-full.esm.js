@@ -1,4 +1,4 @@
-const version = '3.2.3';
+const version = '3.2.8';
 
 function reportError(...error) {
     console.error(...error);
@@ -14,6 +14,7 @@ var errorUtils = /*#__PURE__*/Object.freeze({
 });
 
 function getElem(ele, mode, parent) {
+    // Return generic Element type or NodeList
     if (typeof ele !== 'string')
         return ele;
     let searchContext = document;
@@ -27,6 +28,7 @@ function getElem(ele, mode, parent) {
         searchContext = parent;
     }
     // If mode is 'all', search for all elements that match, otherwise, search for the first match
+    // Casting the result as E or NodeList
     return mode === 'all' ? searchContext.querySelectorAll(ele) : searchContext.querySelector(ele);
 }
 function createElem(tagName, attrs = {}, text = '') {
@@ -165,9 +167,9 @@ function compatInsertRule(stylesheet, selector, cssText, id = null) {
     stylesheet.insertRule(modifiedSelector + '{' + cssText + '}', 0);
 }
 function removeStylesheet(id = null) {
-    id = isEmpty(id) ? '' : id;
-    let styleElement = getElem('#' + stylesheetId + id);
-    if (styleElement) {
+    const styleId = isEmpty(id) ? '' : id;
+    let styleElement = getElem('#' + stylesheetId + styleId);
+    if (styleElement && styleElement.parentNode) {
         styleElement.parentNode.removeChild(styleElement);
     }
 }
@@ -296,12 +298,10 @@ var storageUtils = /*#__PURE__*/Object.freeze({
     setSessionValue: setSessionValue
 });
 
-function addEventListener(...params) {
-    const [element, eventName, handler, options] = params;
+function addEventListener(element, eventName, handler, options) {
     element.addEventListener(eventName, handler, options);
 }
-function removeEventListener(...params) {
-    const [element, eventName, handler, options] = params;
+function removeEventListener(element, eventName, handler, options) {
     element.removeEventListener(eventName, handler, options);
 }
 function createEvent(eventName, detail, options) {
@@ -454,7 +454,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.1';
+    static version = '1.1.3';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
