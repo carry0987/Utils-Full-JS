@@ -479,7 +479,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.8';
+    static version = '1.1.10';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -524,6 +524,7 @@ class Utils {
     static removeCookie = storageUtils.removeCookie;
     // fetchUtils
     static doFetch = fetchUtils.doFetch;
+    static sendData = fetchUtils.sendData;
     static sendFormData = fetchUtils.sendFormData;
     // formUtils
     static appendFormData = formUtils.appendFormData;

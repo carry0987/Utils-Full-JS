@@ -52,6 +52,7 @@ class Utils {
     static removeCookie: typeof UtilsModule.storageUtils.removeCookie = UtilsModule.storageUtils.removeCookie;
     // fetchUtils
     static doFetch: typeof UtilsModule.fetchUtils.doFetch = UtilsModule.fetchUtils.doFetch;
+    static sendData: typeof UtilsModule.fetchUtils.sendData = UtilsModule.fetchUtils.sendData;
     static sendFormData: typeof UtilsModule.fetchUtils.sendFormData = UtilsModule.fetchUtils.sendFormData;
     // formUtils
     static appendFormData: typeof UtilsModule.formUtils.appendFormData = UtilsModule.formUtils.appendFormData;
