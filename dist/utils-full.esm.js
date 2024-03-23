@@ -479,7 +479,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.10';
+    static version = '1.1.11';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
