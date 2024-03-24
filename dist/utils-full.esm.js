@@ -1,4 +1,4 @@
-const version = '3.2.16';
+const version = '3.2.17';
 
 function reportError(...error) {
     console.error(...error);
@@ -432,7 +432,7 @@ async function sendData(options) {
         url: url,
         method: method,
         body: encodeFormData(data),
-        beforeSend,
+        beforeSend: beforeSend,
         success: (responseData) => {
             success?.(responseData);
         },
@@ -449,7 +449,7 @@ async function sendFormData(options) {
         url: url,
         method: method,
         body: encodeFormData(data),
-        beforeSend,
+        beforeSend: beforeSend,
         success: (responseData) => {
             success?.(responseData);
         },
@@ -473,7 +473,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.12';
+    static version = '1.1.13';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
