@@ -1,4 +1,4 @@
-const version = '3.2.17';
+const version = '3.2.18';
 
 function reportError(...error) {
     console.error(...error);
@@ -16,9 +16,6 @@ var errorUtils = /*#__PURE__*/Object.freeze({
 function getElem(ele, mode, parent) {
     // Return generic Element type or NodeList
     if (typeof ele !== 'string') {
-        if (mode === 'all') {
-            return [ele];
-        }
         return ele;
     }
     let searchContext = document;
@@ -473,7 +470,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.13';
+    static version = '1.1.14';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
