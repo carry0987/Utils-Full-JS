@@ -1,4 +1,4 @@
-const version = '3.2.18';
+const version = '3.2.19';
 
 function reportError(...error) {
     console.error(...error);
@@ -106,6 +106,12 @@ const replaceRule = {
 function isObject(item) {
     return typeof item === 'object' && item !== null && !Array.isArray(item);
 }
+function isEmpty(str) {
+    if (typeof str === 'number') {
+        return false;
+    }
+    return !str || (typeof str === 'string' && str.length === 0);
+}
 function deepMerge(target, ...sources) {
     if (!sources.length)
         return target;
@@ -173,12 +179,6 @@ function removeStylesheet(id = null) {
     if (styleElement && styleElement.parentNode) {
         styleElement.parentNode.removeChild(styleElement);
     }
-}
-function isEmpty(str) {
-    if (typeof str === 'number') {
-        return false;
-    }
-    return !str || (typeof str === 'string' && str.length === 0);
 }
 function generateRandom(length = 8) {
     return Math.random().toString(36).substring(2, 2 + length);
@@ -470,7 +470,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.14';
+    static version = '1.1.15';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
