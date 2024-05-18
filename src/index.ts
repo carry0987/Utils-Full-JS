@@ -17,8 +17,13 @@ class Utils {
     // utils
     static setStylesheetId: typeof UtilsModule.setStylesheetId = UtilsModule.setStylesheetId;
     static setReplaceRule: typeof UtilsModule.setReplaceRule = UtilsModule.setReplaceRule;
-    static isEmpty: typeof UtilsModule.isEmpty = UtilsModule.isEmpty;
     static isObject: typeof UtilsModule.isObject = UtilsModule.isObject;
+    static isArray: typeof UtilsModule.isArray = UtilsModule.isArray;
+    static isFunction: typeof UtilsModule.isFunction = UtilsModule.isFunction;
+    static isString: typeof UtilsModule.isString = UtilsModule.isString;
+    static isNumber: typeof UtilsModule.isNumber = UtilsModule.isNumber;
+    static isBoolean: typeof UtilsModule.isBoolean = UtilsModule.isBoolean;
+    static isEmpty: typeof UtilsModule.isEmpty = UtilsModule.isEmpty;
     static deepMerge: typeof UtilsModule.deepMerge = UtilsModule.deepMerge;
     static injectStylesheet: typeof UtilsModule.injectStylesheet = UtilsModule.injectStylesheet;
     static buildRules: typeof UtilsModule.buildRules = UtilsModule.buildRules;

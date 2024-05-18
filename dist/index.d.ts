@@ -9,8 +9,13 @@ declare class Utils {
     static replaceRule: Types.ReplaceRule;
     static setStylesheetId: typeof UtilsModule.setStylesheetId;
     static setReplaceRule: typeof UtilsModule.setReplaceRule;
-    static isEmpty: typeof UtilsModule.isEmpty;
     static isObject: typeof UtilsModule.isObject;
+    static isArray: typeof UtilsModule.isArray;
+    static isFunction: typeof UtilsModule.isFunction;
+    static isString: typeof UtilsModule.isString;
+    static isNumber: typeof UtilsModule.isNumber;
+    static isBoolean: typeof UtilsModule.isBoolean;
+    static isEmpty: typeof UtilsModule.isEmpty;
     static deepMerge: typeof UtilsModule.deepMerge;
     static injectStylesheet: typeof UtilsModule.injectStylesheet;
     static buildRules: typeof UtilsModule.buildRules;

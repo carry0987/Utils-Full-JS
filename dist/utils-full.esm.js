@@ -106,6 +106,21 @@ const replaceRule = {
 function isObject(item) {
     return typeof item === 'object' && item !== null && !Array.isArray(item);
 }
+function isFunction(item) {
+    return typeof item === 'function';
+}
+function isString(item) {
+    return typeof item === 'string';
+}
+function isNumber(item) {
+    return typeof item === 'number';
+}
+function isBoolean(item) {
+    return typeof item === 'boolean';
+}
+function isArray(item) {
+    return Array.isArray(item);
+}
 function isEmpty(str) {
     if (typeof str === 'number') {
         return false;
@@ -470,7 +485,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.15';
+    static version = '1.1.16';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -480,8 +495,13 @@ class Utils {
     // utils
     static setStylesheetId = setStylesheetId;
     static setReplaceRule = setReplaceRule;
-    static isEmpty = isEmpty;
     static isObject = isObject;
+    static isArray = isArray;
+    static isFunction = isFunction;
+    static isString = isString;
+    static isNumber = isNumber;
+    static isBoolean = isBoolean;
+    static isEmpty = isEmpty;
     static deepMerge = deepMerge;
     static injectStylesheet = injectStylesheet;
     static buildRules = buildRules;
