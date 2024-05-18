@@ -40,8 +40,10 @@ class Utils {
     static removeClass: typeof UtilsModule.domUtils.removeClass = UtilsModule.domUtils.removeClass;
     static toggleClass: typeof UtilsModule.domUtils.toggleClass = UtilsModule.domUtils.toggleClass;
     static hasClass: typeof UtilsModule.domUtils.hasClass = UtilsModule.domUtils.hasClass;
+    static hasParent: typeof UtilsModule.domUtils.hasParent = UtilsModule.domUtils.hasParent;
     static findParent: typeof UtilsModule.domUtils.findParent = UtilsModule.domUtils.findParent;
     static findParents: typeof UtilsModule.domUtils.findParents = UtilsModule.domUtils.findParents;
+    static hasChild: typeof UtilsModule.domUtils.hasChild = UtilsModule.domUtils.hasChild;
     static findChild: typeof UtilsModule.domUtils.findChild = UtilsModule.domUtils.findChild;
     static findChilds: typeof UtilsModule.domUtils.findChilds = UtilsModule.domUtils.findChilds;
     // eventUtils

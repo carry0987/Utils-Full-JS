@@ -1,4 +1,4 @@
-const version = '3.3.1';
+const version = '3.3.2';
 
 function reportError(...error) {
     console.error(...error);
@@ -85,6 +85,18 @@ function toggleClass(ele, className, force) {
 function hasClass(ele, className) {
     return ele.classList.contains(className);
 }
+function hasParent(ele, selector, maxDepth = Infinity) {
+    let parent = ele.parentElement;
+    let depth = 0;
+    while (parent && depth < maxDepth) {
+        if (parent.matches(selector)) {
+            return true;
+        }
+        parent = parent.parentElement;
+        depth++;
+    }
+    return false;
+}
 function findParent(ele, selector) {
     return ele.closest(selector);
 }
@@ -100,6 +112,9 @@ function findParents(ele, selector, maxDepth = Infinity) {
         depth++;
     }
     return parents;
+}
+function hasChild(ele, selector) {
+    return ele.querySelector(selector) !== null;
 }
 function findChild(ele, selector) {
     return ele.querySelector(selector);
@@ -129,7 +144,9 @@ var domUtils = /*#__PURE__*/Object.freeze({
     findParent: findParent,
     findParents: findParents,
     getElem: getElem,
+    hasChild: hasChild,
     hasClass: hasClass,
+    hasParent: hasParent,
     insertAfter: insertAfter,
     insertBefore: insertBefore,
     removeClass: removeClass,
@@ -523,7 +540,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.1';
+    static version = '1.2.2';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -556,8 +573,10 @@ class Utils {
     static removeClass = domUtils.removeClass;
     static toggleClass = domUtils.toggleClass;
     static hasClass = domUtils.hasClass;
+    static hasParent = domUtils.hasParent;
     static findParent = domUtils.findParent;
     static findParents = domUtils.findParents;
+    static hasChild = domUtils.hasChild;
     static findChild = domUtils.findChild;
     static findChilds = domUtils.findChilds;
     // eventUtils
