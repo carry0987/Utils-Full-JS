@@ -1,4 +1,4 @@
-const version = '3.2.19';
+const version = '3.3.0';
 
 function reportError(...error) {
     console.error(...error);
@@ -85,11 +85,49 @@ function toggleClass(ele, className, force) {
 function hasClass(ele, className) {
     return ele.classList.contains(className);
 }
+function findParent(ele, selector) {
+    return ele.closest(selector);
+}
+function findParents(ele, selector, maxDepth = Infinity) {
+    const parents = [];
+    let parent = ele.parentElement;
+    let depth = 0;
+    while (parent && depth < maxDepth) {
+        if (parent.matches(selector)) {
+            parents.push(parent);
+        }
+        parent = parent.parentElement;
+        depth++;
+    }
+    return parents;
+}
+function findChild(ele, selector) {
+    return ele.querySelector(selector);
+}
+function findChilds(ele, selector, maxDepth = Infinity) {
+    const results = [];
+    function recursiveFind(element, depth) {
+        if (depth > maxDepth)
+            return;
+        Array.from(element.children).forEach((child) => {
+            if (child.matches(selector)) {
+                results.push(child);
+            }
+            recursiveFind(child, depth + 1);
+        });
+    }
+    recursiveFind(ele, 0);
+    return results;
+}
 
 var domUtils = /*#__PURE__*/Object.freeze({
     __proto__: null,
     addClass: addClass,
     createElem: createElem,
+    findChild: findChild,
+    findChilds: findChilds,
+    findParent: findParent,
+    findParents: findParents,
     getElem: getElem,
     hasClass: hasClass,
     insertAfter: insertAfter,
@@ -485,7 +523,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.1.16';
+    static version = '1.2.0';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -518,6 +556,10 @@ class Utils {
     static removeClass = domUtils.removeClass;
     static toggleClass = domUtils.toggleClass;
     static hasClass = domUtils.hasClass;
+    static findParent = domUtils.findParent;
+    static findParents = domUtils.findParents;
+    static findChild = domUtils.findChild;
+    static findChilds = domUtils.findChilds;
     // eventUtils
     static createEvent = eventUtils.createEvent;
     static dispatchEvent = eventUtils.dispatchEvent;

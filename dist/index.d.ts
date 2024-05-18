@@ -31,6 +31,10 @@ declare class Utils {
     static removeClass: typeof UtilsModule.domUtils.removeClass;
     static toggleClass: typeof UtilsModule.domUtils.toggleClass;
     static hasClass: typeof UtilsModule.domUtils.hasClass;
+    static findParent: typeof UtilsModule.domUtils.findParent;
+    static findParents: typeof UtilsModule.domUtils.findParents;
+    static findChild: typeof UtilsModule.domUtils.findChild;
+    static findChilds: typeof UtilsModule.domUtils.findChilds;
     static createEvent: typeof UtilsModule.eventUtils.createEvent;
     static dispatchEvent: typeof UtilsModule.eventUtils.dispatchEvent;
     static addEventListener: typeof UtilsModule.eventUtils.addEventListener;
