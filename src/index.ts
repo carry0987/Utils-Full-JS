@@ -25,6 +25,7 @@ class Utils {
     static isBoolean: typeof UtilsModule.isBoolean = UtilsModule.isBoolean;
     static isEmpty: typeof UtilsModule.isEmpty = UtilsModule.isEmpty;
     static deepMerge: typeof UtilsModule.deepMerge = UtilsModule.deepMerge;
+    static deepClone: typeof UtilsModule.deepClone = UtilsModule.deepClone;
     static injectStylesheet: typeof UtilsModule.injectStylesheet = UtilsModule.injectStylesheet;
     static buildRules: typeof UtilsModule.buildRules = UtilsModule.buildRules;
     static compatInsertRule: typeof UtilsModule.compatInsertRule = UtilsModule.compatInsertRule;

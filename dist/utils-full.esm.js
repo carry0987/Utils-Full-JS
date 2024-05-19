@@ -1,4 +1,4 @@
-const version = '3.3.7';
+const version = '3.3.9';
 
 function reportError(...error) {
     console.error(...error);
@@ -192,9 +192,9 @@ function deepMerge(target, ...sources) {
                 const sourceKey = key;
                 const value = source[sourceKey];
                 const targetKey = key;
-                if (isObject(value)) {
+                if (isObject(value) || isArray(value)) {
                     if (!target[targetKey] || typeof target[targetKey] !== 'object') {
-                        target[targetKey] = {};
+                        target[targetKey] = Array.isArray(value) ? [] : {};
                     }
                     deepMerge(target[targetKey], value);
                 }
@@ -205,6 +205,24 @@ function deepMerge(target, ...sources) {
         }
     }
     return deepMerge(target, ...sources);
+}
+function deepClone(obj) {
+    let clone;
+    if (isArray(obj)) {
+        clone = obj.map((item) => deepClone(item));
+    }
+    else if (isObject(obj)) {
+        clone = { ...obj };
+        for (let key in clone) {
+            if (clone.hasOwnProperty(key)) {
+                clone[key] = deepClone(clone[key]);
+            }
+        }
+    }
+    else {
+        clone = obj;
+    }
+    return clone;
 }
 function setStylesheetId(id) {
     stylesheetId = id;
@@ -560,7 +578,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.7';
+    static version = '1.2.8';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -578,6 +596,7 @@ class Utils {
     static isBoolean = isBoolean;
     static isEmpty = isEmpty;
     static deepMerge = deepMerge;
+    static deepClone = deepClone;
     static injectStylesheet = injectStylesheet;
     static buildRules = buildRules;
     static compatInsertRule = compatInsertRule;
