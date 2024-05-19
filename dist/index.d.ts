@@ -24,6 +24,7 @@ declare class Utils {
     static removeStylesheet: typeof UtilsModule.removeStylesheet;
     static generateRandom: typeof UtilsModule.generateRandom;
     static getUrlParam: typeof UtilsModule.getUrlParam;
+    static setUrlParam: typeof UtilsModule.setUrlParam;
     static getElem: typeof UtilsModule.domUtils.getElem;
     static createElem: typeof UtilsModule.domUtils.createElem;
     static insertAfter: typeof UtilsModule.domUtils.insertAfter;
