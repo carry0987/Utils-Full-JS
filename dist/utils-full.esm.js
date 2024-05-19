@@ -1,4 +1,4 @@
-const version = '3.3.3';
+const version = '3.3.4';
 
 function reportError(...error) {
     console.error(...error);
@@ -476,7 +476,17 @@ async function doFetch(options) {
         }
         init.body = data;
     }
-    let request = new Request(url, init);
+    // Handle different types of URL
+    let request;
+    if (typeof url === 'string' || url instanceof URL) {
+        request = new Request(url, init);
+    }
+    else if (url instanceof Request) {
+        request = url;
+    }
+    else {
+        throw new Error('Invalid URL type');
+    }
     try {
         const createRequest = await new Promise((resolve) => {
             beforeSend?.();
@@ -540,7 +550,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.3';
+    static version = '1.2.4';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
