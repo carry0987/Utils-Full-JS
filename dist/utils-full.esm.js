@@ -1,4 +1,4 @@
-const version = '3.3.11';
+const version = '3.3.12';
 
 function reportError(...error) {
     console.error(...error);
@@ -491,7 +491,7 @@ var formUtils = /*#__PURE__*/Object.freeze({
 
 // Fetch API
 async function doFetch(options) {
-    const { url, method = 'GET', headers = {}, cache = 'no-cache', mode = 'cors', credentials = 'same-origin', body = null, beforeSend = null, success = null, error = null, } = options;
+    const { url, method = 'GET', headers = {}, cache = 'no-cache', mode = 'cors', credentials = 'same-origin', body = null, beforeSend = null, success = null, error = null } = options;
     let requestURL = url;
     let initHeaders = headers instanceof Headers ? headers : new Headers(headers);
     let init = {
@@ -543,7 +543,7 @@ async function doFetch(options) {
 }
 // Send data
 async function sendData(options) {
-    const { url, data, method = 'POST', headers, cache, mode, credentials, success, errorCallback, beforeSend } = options;
+    const { url, data, method = 'POST', headers, cache, mode, credentials, success, errorCallback, beforeSend, encode = true } = options;
     const fetchOptions = {
         url: url,
         method: method,
@@ -551,7 +551,7 @@ async function sendData(options) {
         cache: cache,
         mode: mode,
         credentials: credentials,
-        body: encodeFormData(data),
+        body: encode ? encodeFormData(data) : data,
         beforeSend: beforeSend,
         success: (responseData) => {
             success?.(responseData);
@@ -597,7 +597,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.10';
+    static version = '1.2.11';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
