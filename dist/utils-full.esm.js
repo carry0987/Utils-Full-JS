@@ -1,4 +1,4 @@
-const version = '3.3.12';
+const version = '3.3.13';
 
 function reportError(...error) {
     console.error(...error);
@@ -551,7 +551,7 @@ async function sendData(options) {
         cache: cache,
         mode: mode,
         credentials: credentials,
-        body: encode ? encodeFormData(data) : data,
+        body: (encode && method.toUpperCase() !== 'GET') ? encodeFormData(data) : data,
         beforeSend: beforeSend,
         success: (responseData) => {
             success?.(responseData);
@@ -585,11 +585,17 @@ async function sendFormData(options) {
         .then(() => true)
         .catch(() => false);
 }
+// Alias for sendData
+const fetchData = sendData;
+// Alias for sendFormData
+const sendForm = sendFormData;
 
 var fetchUtils = /*#__PURE__*/Object.freeze({
     __proto__: null,
     doFetch: doFetch,
+    fetchData: fetchData,
     sendData: sendData,
+    sendForm: sendForm,
     sendFormData: sendFormData
 });
 
@@ -597,7 +603,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.11';
+    static version = '1.2.12';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -657,6 +663,8 @@ class Utils {
     static doFetch = fetchUtils.doFetch;
     static sendData = fetchUtils.sendData;
     static sendFormData = fetchUtils.sendFormData;
+    static fetchData = fetchUtils.fetchData;
+    static sendForm = fetchUtils.sendForm;
     // formUtils
     static appendFormData = formUtils.appendFormData;
     static encodeFormData = formUtils.encodeFormData;

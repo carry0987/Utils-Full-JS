@@ -67,6 +67,8 @@ class Utils {
     static doFetch: typeof UtilsModule.fetchUtils.doFetch = UtilsModule.fetchUtils.doFetch;
     static sendData: typeof UtilsModule.fetchUtils.sendData = UtilsModule.fetchUtils.sendData;
     static sendFormData: typeof UtilsModule.fetchUtils.sendFormData = UtilsModule.fetchUtils.sendFormData;
+    static fetchData: typeof UtilsModule.fetchUtils.fetchData = UtilsModule.fetchUtils.fetchData;
+    static sendForm: typeof UtilsModule.fetchUtils.sendForm = UtilsModule.fetchUtils.sendForm;
     // formUtils
     static appendFormData: typeof UtilsModule.formUtils.appendFormData = UtilsModule.formUtils.appendFormData;
     static encodeFormData: typeof UtilsModule.formUtils.encodeFormData = UtilsModule.formUtils.encodeFormData;
