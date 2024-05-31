@@ -1,4 +1,4 @@
-const version = '3.3.16';
+const version = '3.4.1';
 
 function reportError(...error) {
     console.error(...error);
@@ -537,13 +537,14 @@ async function doFetch(options) {
         return responseData;
     }
     catch (caughtError) {
-        error?.(caughtError);
-        throw caughtError;
+        const errorObj = caughtError instanceof Error ? caughtError : new Error(String(caughtError));
+        error?.(errorObj);
+        throw errorObj;
     }
 }
 // Send data
 async function sendData(options) {
-    const { url, data, method = 'POST', headers, cache, mode, credentials, success, errorCallback, beforeSend, encode = true } = options;
+    const { url, data, method = 'POST', headers, cache, mode, credentials, success, error, beforeSend, encode = true } = options;
     const fetchOptions = {
         url: url,
         method: method,
@@ -557,14 +558,14 @@ async function sendData(options) {
             success?.(responseData);
         },
         error: (caughtError) => {
-            errorCallback?.(caughtError);
+            error?.(caughtError);
         }
     };
     return doFetch(fetchOptions);
 }
 // Send form data
 async function sendFormData(options) {
-    const { url, data, method = 'POST', headers, cache, mode, credentials, success, errorCallback, beforeSend } = options;
+    const { url, data, method = 'POST', headers, cache, mode, credentials, success, error, beforeSend } = options;
     const fetchOptions = {
         url: url,
         method: method,
@@ -578,7 +579,7 @@ async function sendFormData(options) {
             success?.(responseData);
         },
         error: (caughtError) => {
-            errorCallback?.(caughtError);
+            error?.(caughtError);
         }
     };
     return doFetch(fetchOptions)
@@ -603,7 +604,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.14';
+    static version = '1.2.15';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
