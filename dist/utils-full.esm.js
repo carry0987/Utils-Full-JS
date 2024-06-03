@@ -1,4 +1,4 @@
-const version = '3.4.1';
+const version = '3.5.0';
 
 function reportError(...error) {
     console.error(...error);
@@ -194,7 +194,7 @@ function deepMerge(target, ...sources) {
                 const targetKey = key;
                 if (isObject(value) || isArray(value)) {
                     if (!target[targetKey] || typeof target[targetKey] !== 'object') {
-                        target[targetKey] = Array.isArray(value) ? [] : {};
+                        target[targetKey] = isArray(value) ? [] : {};
                     }
                     deepMerge(target[targetKey], value);
                 }
@@ -269,7 +269,14 @@ function removeStylesheet(id = null) {
     }
 }
 function generateRandom(length = 8) {
-    return Math.random().toString(36).substring(2, 2 + length);
+    let result = '';
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charactersLength);
+        result += characters[randomIndex];
+    }
+    return result;
 }
 function getUrlParam(sParam, url = window.location.href) {
     const isHashParam = sParam.startsWith('#');
@@ -441,7 +448,12 @@ var eventUtils = /*#__PURE__*/Object.freeze({
 // Append form data
 function appendFormData(options, formData = new FormData()) {
     const { data, parentKey = '' } = options;
-    if (data !== null && typeof data === 'object') {
+    if (data instanceof FormData) {
+        data.forEach((value, key) => {
+            formData.append(key, value);
+        });
+    }
+    else if (data !== null && typeof data === 'object') {
         // Check if it is Blob or File, if so, add directly
         if (data instanceof Blob || data instanceof File) {
             const formKey = parentKey || 'file'; // If no key is specified, the default is 'file'
@@ -493,8 +505,8 @@ var formUtils = /*#__PURE__*/Object.freeze({
 async function doFetch(options) {
     const { url, method = 'GET', headers = {}, cache = 'no-cache', mode = 'cors', credentials = 'same-origin', body = null, beforeSend = null, success = null, error = null } = options;
     let requestURL = url;
-    let initHeaders = headers instanceof Headers ? headers : new Headers(headers);
-    let init = {
+    const initHeaders = headers instanceof Headers ? headers : new Headers(headers);
+    const init = {
         method: method,
         mode: mode,
         headers: initHeaders,
@@ -532,9 +544,18 @@ async function doFetch(options) {
             resolve(request);
         });
         const response = await fetch(createRequest);
-        const responseData = await response.json();
-        success?.(responseData);
-        return responseData;
+        if (response.ok) {
+            if (typeof success === 'function') {
+                // Clone the response and parse the clone
+                const clonedResponse = response.clone();
+                const responseData = await clonedResponse.json();
+                success?.(responseData);
+            }
+        }
+        else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response;
     }
     catch (caughtError) {
         const errorObj = caughtError instanceof Error ? caughtError : new Error(String(caughtError));
@@ -561,7 +582,7 @@ async function sendData(options) {
             error?.(caughtError);
         }
     };
-    return doFetch(fetchOptions);
+    return (await doFetch(fetchOptions)).json();
 }
 // Send form data
 async function sendFormData(options) {
@@ -604,7 +625,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.2.15';
+    static version = '1.3.0';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
