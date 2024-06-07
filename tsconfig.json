@@ -2,13 +2,14 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "importHelpers": true,
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
     "outDir": "./dist",
-    "declarationDir": "dist/dts/"
+    "declarationDir": "dist/dts/",
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]

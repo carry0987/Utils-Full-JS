@@ -25,12 +25,17 @@ class Utils {
     static isBoolean: typeof UtilsModule.isBoolean = UtilsModule.isBoolean;
     static isEmpty: typeof UtilsModule.isEmpty = UtilsModule.isEmpty;
     static deepMerge: typeof UtilsModule.deepMerge = UtilsModule.deepMerge;
+    static shallowMerge: typeof UtilsModule.shallowMerge = UtilsModule.shallowMerge;
     static deepClone: typeof UtilsModule.deepClone = UtilsModule.deepClone;
+    static shallowClone: typeof UtilsModule.shallowClone = UtilsModule.shallowClone;
+    static deepEqual: typeof UtilsModule.deepEqual = UtilsModule.deepEqual;
+    static shallowEqual: typeof UtilsModule.shallowEqual = UtilsModule.shallowEqual;
     static injectStylesheet: typeof UtilsModule.injectStylesheet = UtilsModule.injectStylesheet;
     static buildRules: typeof UtilsModule.buildRules = UtilsModule.buildRules;
     static compatInsertRule: typeof UtilsModule.compatInsertRule = UtilsModule.compatInsertRule;
     static removeStylesheet: typeof UtilsModule.removeStylesheet = UtilsModule.removeStylesheet;
     static generateRandom: typeof UtilsModule.generateRandom = UtilsModule.generateRandom;
+    static generateUUID: typeof UtilsModule.generateUUID = UtilsModule.generateUUID;
     static getUrlParam: typeof UtilsModule.getUrlParam = UtilsModule.getUrlParam;
     static setUrlParam: typeof UtilsModule.setUrlParam = UtilsModule.setUrlParam;
     // domUtils

@@ -17,12 +17,17 @@ declare class Utils {
     static isBoolean: typeof UtilsModule.isBoolean;
     static isEmpty: typeof UtilsModule.isEmpty;
     static deepMerge: typeof UtilsModule.deepMerge;
+    static shallowMerge: typeof UtilsModule.shallowMerge;
     static deepClone: typeof UtilsModule.deepClone;
+    static shallowClone: typeof UtilsModule.shallowClone;
+    static deepEqual: typeof UtilsModule.deepEqual;
+    static shallowEqual: typeof UtilsModule.shallowEqual;
     static injectStylesheet: typeof UtilsModule.injectStylesheet;
     static buildRules: typeof UtilsModule.buildRules;
     static compatInsertRule: typeof UtilsModule.compatInsertRule;
     static removeStylesheet: typeof UtilsModule.removeStylesheet;
     static generateRandom: typeof UtilsModule.generateRandom;
+    static generateUUID: typeof UtilsModule.generateUUID;
     static getUrlParam: typeof UtilsModule.getUrlParam;
     static setUrlParam: typeof UtilsModule.setUrlParam;
     static getElem: typeof UtilsModule.domUtils.getElem;

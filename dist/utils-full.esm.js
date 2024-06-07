@@ -1,4 +1,4 @@
-const version = '3.5.0';
+const version = '3.6.2';
 
 function reportError(...error) {
     console.error(...error);
@@ -206,6 +206,24 @@ function deepMerge(target, ...sources) {
     }
     return deepMerge(target, ...sources);
 }
+function shallowMerge(target, ...sources) {
+    sources.forEach(source => {
+        if (source) {
+            Object.keys(source).forEach(key => {
+                const targetKey = key;
+                const sourceValue = source[targetKey];
+                if (isObject(sourceValue) && typeof target[targetKey]?.constructor === 'function' && sourceValue instanceof target[targetKey].constructor) {
+                    // If the source value is an object and its constructor matches the target's constructor.
+                    target[targetKey] = Object.assign(Object.create(Object.getPrototypeOf(sourceValue), {}), sourceValue);
+                }
+                else {
+                    target[targetKey] = sourceValue;
+                }
+            });
+        }
+    });
+    return target;
+}
 function deepClone(obj) {
     let clone;
     if (isArray(obj)) {
@@ -223,6 +241,93 @@ function deepClone(obj) {
         clone = obj;
     }
     return clone;
+}
+function shallowClone(obj) {
+    if (isObject(obj) || isArray(obj)) {
+        // Recursively clone properties
+        const clone = isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                const value = obj[key];
+                clone[key] = isObject(value)
+                    ? shallowClone(value)
+                    : isArray(value)
+                        ? [...value]
+                        : value;
+            }
+        }
+        return clone;
+    }
+    return obj;
+}
+function deepEqual(obj1, obj2) {
+    if (typeof obj1 !== typeof obj2)
+        return false;
+    if (obj1 === null || obj2 === null)
+        return obj1 === obj2;
+    if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
+        return obj1 === obj2;
+    }
+    if (obj1 instanceof Date && obj2 instanceof Date) {
+        return obj1.getTime() === obj2.getTime();
+    }
+    if (Array.isArray(obj1) && Array.isArray(obj2)) {
+        if (obj1.length !== obj2.length)
+            return false;
+        return obj1.every((item, index) => deepEqual(item, obj2[index]));
+    }
+    if (Array.isArray(obj1) || Array.isArray(obj2))
+        return false;
+    if (obj1 instanceof Set && obj2 instanceof Set) {
+        if (obj1.size !== obj2.size)
+            return false;
+        for (const item of obj1) {
+            if (!obj2.has(item))
+                return false;
+        }
+        return true;
+    }
+    if (obj1 instanceof Map && obj2 instanceof Map) {
+        if (obj1.size !== obj2.size)
+            return false;
+        for (const [key, value] of obj1) {
+            if (!deepEqual(value, obj2.get(key)))
+                return false;
+        }
+        return true;
+    }
+    if (Object.getPrototypeOf(obj1) !== Object.getPrototypeOf(obj2))
+        return false;
+    const keys1 = Reflect.ownKeys(obj1);
+    const keys2 = Reflect.ownKeys(obj2);
+    if (keys1.length !== keys2.length)
+        return false;
+    for (const key of keys1) {
+        if (!deepEqual(obj1[key], obj2[key]))
+            return false;
+    }
+    return true;
+}
+function shallowEqual(obj1, obj2) {
+    if (typeof obj1 !== typeof obj2)
+        return false;
+    if (obj1 === null || obj2 === null)
+        return obj1 === obj2;
+    // If both are the same reference, they are equal
+    if (obj1 === obj2)
+        return true;
+    if (typeof obj1 !== 'object' || typeof obj2 !== 'object') {
+        return obj1 === obj2;
+    }
+    const keys1 = Reflect.ownKeys(obj1);
+    const keys2 = Reflect.ownKeys(obj2);
+    if (keys1.length !== keys2.length)
+        return false;
+    for (const key of keys1) {
+        if (obj1[key] !== obj2[key])
+            return false;
+    }
+    return true;
 }
 function setStylesheetId(id) {
     stylesheetId = id;
@@ -277,6 +382,12 @@ function generateRandom(length = 8) {
         result += characters[randomIndex];
     }
     return result;
+}
+function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
 }
 function getUrlParam(sParam, url = window.location.href) {
     const isHashParam = sParam.startsWith('#');
@@ -625,7 +736,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.3.0';
+    static version = '1.4.0';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -643,12 +754,17 @@ class Utils {
     static isBoolean = isBoolean;
     static isEmpty = isEmpty;
     static deepMerge = deepMerge;
+    static shallowMerge = shallowMerge;
     static deepClone = deepClone;
+    static shallowClone = shallowClone;
+    static deepEqual = deepEqual;
+    static shallowEqual = shallowEqual;
     static injectStylesheet = injectStylesheet;
     static buildRules = buildRules;
     static compatInsertRule = compatInsertRule;
     static removeStylesheet = removeStylesheet;
     static generateRandom = generateRandom;
+    static generateUUID = generateUUID;
     static getUrlParam = getUrlParam;
     static setUrlParam = setUrlParam;
     // domUtils
