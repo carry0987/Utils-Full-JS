@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@carry0987/utils':
-        specifier: ^3.6.4
-        version: 3.6.4
+        specifier: ^3.6.5
+        version: 3.6.5
       '@rollup/plugin-node-resolve':
         specifier: ^15.2.3
         version: 15.2.3(rollup@4.18.0)
@@ -50,8 +50,8 @@ packages:
     resolution: {integrity: sha512-EStJpq4OuY8xYfhGVXngigBJRWxftKX9ksiGDnmlY3o7B/V7KIAc9X4oiK87uPJSc/vs5L869bem5fhZa8caZw==}
     engines: {node: '>=6.9.0'}
 
-  '@carry0987/utils@3.6.4':
-    resolution: {integrity: sha512-JOT4ugYY6Km8GmQ/3yZ7mfSOEDM5peD09JDKb4irp3HeSxYp7X7ogZj6QmdIEwjMuzLKZJFjkXZ1xD17NWluDQ==}
+  '@carry0987/utils@3.6.5':
+    resolution: {integrity: sha512-LNkYV3AEu1zPgl9A+0QgurLGceXr0cal4jPb61tzSU48+BAsvEF1ftpFSRc3YZ/d2YP/O74Y6F/fpRMFtv/dlg==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -230,8 +230,8 @@ packages:
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
-  acorn@8.11.3:
-    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
+  acorn@8.12.0:
+    resolution: {integrity: sha512-RTvkC4w+KNXrM39/lWCUaG0IbRkWdCv7W/IOW9oU6SawyxulvkQy5HQPVTKxEjczcUvapcrw3cFx/60VN/NRNw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -543,7 +543,7 @@ snapshots:
       picocolors: 1.0.1
     optional: true
 
-  '@carry0987/utils@3.6.4': {}
+  '@carry0987/utils@3.6.5': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
@@ -685,7 +685,7 @@ snapshots:
 
   '@types/resolve@1.20.2': {}
 
-  acorn@8.11.3: {}
+  acorn@8.12.0: {}
 
   aggregate-error@3.1.0:
     dependencies:
@@ -966,7 +966,7 @@ snapshots:
   terser@5.31.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.11.3
+      acorn: 8.12.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
