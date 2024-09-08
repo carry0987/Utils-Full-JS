@@ -64,6 +64,9 @@ declare class Utils {
     static sendForm: typeof UtilsModule.fetchUtils.sendForm;
     static appendFormData: typeof UtilsModule.formUtils.appendFormData;
     static encodeFormData: typeof UtilsModule.formUtils.encodeFormData;
+    static decodeFormData: typeof UtilsModule.formUtils.decodeFormData;
+    static formDataToURLParams: typeof UtilsModule.formUtils.formDataToURLParams;
+    static bodyToURLParams: typeof UtilsModule.formUtils.bodyToURLParams;
     static reportError: typeof UtilsModule.errorUtils.reportError;
     static throwError: typeof UtilsModule.errorUtils.throwError;
 }

@@ -77,6 +77,9 @@ class Utils {
     // formUtils
     static appendFormData: typeof UtilsModule.formUtils.appendFormData = UtilsModule.formUtils.appendFormData;
     static encodeFormData: typeof UtilsModule.formUtils.encodeFormData = UtilsModule.formUtils.encodeFormData;
+    static decodeFormData: typeof UtilsModule.formUtils.decodeFormData = UtilsModule.formUtils.decodeFormData;
+    static formDataToURLParams: typeof UtilsModule.formUtils.formDataToURLParams = UtilsModule.formUtils.formDataToURLParams;
+    static bodyToURLParams: typeof UtilsModule.formUtils.bodyToURLParams = UtilsModule.formUtils.bodyToURLParams;
     // errorUtils
     static reportError: typeof UtilsModule.errorUtils.reportError = UtilsModule.errorUtils.reportError;
     static throwError: typeof UtilsModule.errorUtils.throwError = UtilsModule.errorUtils.throwError;
