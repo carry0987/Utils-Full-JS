@@ -1,11 +1,18 @@
 {
   "name": "@carry0987/utils-full",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "A full library for Utils modules, include all methods from @carry0987/utils",
   "type": "module",
   "main": "dist/utils-full.min.js",
   "module": "dist/utils-full.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "umd": "./dist/utils-full.min.js",
+      "import": "./dist/utils-full.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:js": "rollup --config rollup.config.ts --configPlugin typescript --environment BUILD:js",
@@ -33,13 +40,13 @@
   },
   "homepage": "https://github.com/carry0987/Utils-Full-JS#readme",
   "devDependencies": {
-    "@carry0987/utils": "^3.7.2",
+    "@carry0987/utils": "^3.7.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
-    "rollup": "^4.21.2",
-    "rollup-plugin-delete": "^2.0.0",
+    "rollup": "^4.21.3",
+    "rollup-plugin-delete": "^2.1.0",
     "rollup-plugin-dts": "^6.1.1",
     "tslib": "^2.7.0"
   }
