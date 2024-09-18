@@ -1,6 +1,6 @@
 {
   "name": "@carry0987/utils-full",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "A full library for Utils modules, include all methods from @carry0987/utils",
   "type": "module",
   "main": "dist/utils-full.min.js",
@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/carry0987/Utils-Full-JS#readme",
   "devDependencies": {
-    "@carry0987/utils": "^3.7.3",
+    "@carry0987/utils": "^3.7.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",

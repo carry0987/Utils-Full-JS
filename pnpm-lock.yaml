@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@carry0987/utils':
-        specifier: ^3.7.3
-        version: 3.7.3
+        specifier: ^3.7.4
+        version: 3.7.4
       '@rollup/plugin-node-resolve':
         specifier: ^15.2.3
         version: 15.2.3(rollup@4.21.3)
@@ -50,8 +50,8 @@ packages:
     resolution: {integrity: sha512-EStJpq4OuY8xYfhGVXngigBJRWxftKX9ksiGDnmlY3o7B/V7KIAc9X4oiK87uPJSc/vs5L869bem5fhZa8caZw==}
     engines: {node: '>=6.9.0'}
 
-  '@carry0987/utils@3.7.3':
-    resolution: {integrity: sha512-qdmttllxmYzKIZieGdsEJjmIQLsUir3HrC162SJrP8+04DsPN/TdkbRqao3Sx8EtX1cHxmf+UnFjnESo2Ft+SQ==}
+  '@carry0987/utils@3.7.4':
+    resolution: {integrity: sha512-EOZd24Bnb8AthDl0us9n1IQ6nWJDJ0SytKh2UeWbaCTBAvt6vqGaykoK1DQqXvpl+DCkUGX7HLnkJaJ6LC5GPA==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -217,6 +217,9 @@ packages:
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+
+  '@types/estree@1.0.6':
+    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
   '@types/glob@7.2.0':
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
@@ -504,8 +507,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  terser@5.32.0:
-    resolution: {integrity: sha512-v3Gtw3IzpBJ0ugkxEX8U0W6+TnPKRRCWGh1jC/iM/e3Ki5+qvO1L1EAZ56bZasc64aXHwRHNIQEzm6//i5cemQ==}
+  terser@5.33.0:
+    resolution: {integrity: sha512-JuPVaB7s1gdFKPKTelwUyRq5Sid2A3Gko2S0PncwdBq7kN9Ti9HPWDQ06MPsEDGsZeVESjKEnyGy68quBk1w6g==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -546,7 +549,7 @@ snapshots:
       picocolors: 1.1.0
     optional: true
 
-  '@carry0987/utils@3.7.3': {}
+  '@carry0987/utils@3.7.4': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
@@ -604,7 +607,7 @@ snapshots:
     dependencies:
       serialize-javascript: 6.0.2
       smob: 1.5.0
-      terser: 5.32.0
+      terser: 5.33.0
     optionalDependencies:
       rollup: 4.21.3
 
@@ -619,7 +622,7 @@ snapshots:
 
   '@rollup/pluginutils@5.1.0(rollup@4.21.3)':
     dependencies:
-      '@types/estree': 1.0.5
+      '@types/estree': 1.0.6
       estree-walker: 2.0.2
       picomatch: 2.3.1
     optionalDependencies:
@@ -674,6 +677,8 @@ snapshots:
     optional: true
 
   '@types/estree@1.0.5': {}
+
+  '@types/estree@1.0.6': {}
 
   '@types/glob@7.2.0':
     dependencies:
@@ -967,7 +972,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  terser@5.32.0:
+  terser@5.33.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.12.1
