@@ -1,4 +1,4 @@
-const version = '3.7.6';
+const version = '3.7.7';
 
 function reportError(...error) {
     console.error(...error);
@@ -723,11 +723,11 @@ async function doFetch(options) {
         cache: cache,
         credentials: credentials
     };
-    if (body !== null && method.toUpperCase() === 'GET') {
+    if (body && body !== null && method.toUpperCase() === 'GET') {
         const params = bodyToURLParams(body);
         requestURL = setUrlParam(typeof url === 'string' ? url : url.toString(), params, true);
     }
-    else if (body !== null && ['PUT', 'POST', 'DELETE'].includes(method.toUpperCase())) {
+    else if (body && body !== null && ['PUT', 'POST', 'DELETE'].includes(method.toUpperCase())) {
         let data = body;
         if (!(body instanceof FormData)) {
             data = JSON.stringify(body);
@@ -801,7 +801,7 @@ async function sendFormData(options) {
         cache: cache,
         mode: mode,
         credentials: credentials,
-        body: encodeFormData(data),
+        body: data ? encodeFormData(data) : null,
         beforeSend: beforeSend,
         success: success,
         error: error
@@ -828,7 +828,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.4.9';
+    static version = '1.4.10';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
