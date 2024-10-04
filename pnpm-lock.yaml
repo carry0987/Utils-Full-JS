@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@carry0987/utils':
-        specifier: ^3.7.5
-        version: 3.7.5
+        specifier: ^3.7.6
+        version: 3.7.6
       '@rollup/plugin-node-resolve':
         specifier: ^15.3.0
         version: 15.3.0(rollup@4.24.0)
@@ -50,8 +50,8 @@ packages:
     resolution: {integrity: sha512-iYyACpW3iW8Fw+ZybQK+drQre+ns/tKpXbNESfrhNnPLIklLbXr7MYJ6gPEd0iETGLOK+SxMjVvKb/ffmk+FEw==}
     engines: {node: '>=6.9.0'}
 
-  '@carry0987/utils@3.7.5':
-    resolution: {integrity: sha512-K8luNfE2BeamfgZHEA6+ySLWzUtNRQ0EZjsUa33MKegTxp+TaMjgK8RqoBlNfGnc2XnT4ULX2fw53uSES6cZjA==}
+  '@carry0987/utils@3.7.6':
+    resolution: {integrity: sha512-HiBeJeRs7iUfv0hQTp1wqnriuZfFPnzZuGN2Hcv2wDzEyN3aDGEoJd4MaYY5VUpA0x/dVltvyODof/03bFIcQQ==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -538,7 +538,7 @@ snapshots:
       picocolors: 1.1.0
     optional: true
 
-  '@carry0987/utils@3.7.5': {}
+  '@carry0987/utils@3.7.6': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
