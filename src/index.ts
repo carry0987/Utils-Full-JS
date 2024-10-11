@@ -53,6 +53,7 @@ class Utils {
     static hasChild: typeof UtilsModule.domUtils.hasChild = UtilsModule.domUtils.hasChild;
     static findChild: typeof UtilsModule.domUtils.findChild = UtilsModule.domUtils.findChild;
     static findChilds: typeof UtilsModule.domUtils.findChilds = UtilsModule.domUtils.findChilds;
+    static templateToHtml: typeof UtilsModule.domUtils.templateToHtml = UtilsModule.domUtils.templateToHtml;
     // eventUtils
     static createEvent: typeof UtilsModule.eventUtils.createEvent = UtilsModule.eventUtils.createEvent;
     static dispatchEvent: typeof UtilsModule.eventUtils.dispatchEvent = UtilsModule.eventUtils.dispatchEvent;

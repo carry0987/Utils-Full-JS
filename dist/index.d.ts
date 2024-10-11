@@ -44,6 +44,7 @@ declare class Utils {
     static hasChild: typeof UtilsModule.domUtils.hasChild;
     static findChild: typeof UtilsModule.domUtils.findChild;
     static findChilds: typeof UtilsModule.domUtils.findChilds;
+    static templateToHtml: typeof UtilsModule.domUtils.templateToHtml;
     static createEvent: typeof UtilsModule.eventUtils.createEvent;
     static dispatchEvent: typeof UtilsModule.eventUtils.dispatchEvent;
     static addEventListener: typeof UtilsModule.eventUtils.addEventListener;
