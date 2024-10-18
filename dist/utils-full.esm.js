@@ -1,4 +1,4 @@
-const version = '3.8.0';
+const version = '3.8.1';
 
 function reportError(...error) {
     console.error(...error);
@@ -672,7 +672,7 @@ function debounce(func, waitFor) {
     });
 }
 
-var executionUtils = /*#__PURE__*/Object.freeze({
+var executeUtils = /*#__PURE__*/Object.freeze({
     __proto__: null,
     debounce: debounce,
     throttle: throttle
@@ -910,7 +910,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.5.0';
+    static version = '1.5.1';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -962,9 +962,9 @@ class Utils {
     static dispatchEvent = eventUtils.dispatchEvent;
     static addEventListener = eventUtils.addEventListener;
     static removeEventListener = eventUtils.removeEventListener;
-    // executionUtils
-    static debounce = executionUtils.debounce;
-    static throttle = executionUtils.throttle;
+    // executeUtils
+    static debounce = executeUtils.debounce;
+    static throttle = executeUtils.throttle;
     // storageUtils
     static setLocalValue = storageUtils.setLocalValue;
     static getLocalValue = storageUtils.getLocalValue;

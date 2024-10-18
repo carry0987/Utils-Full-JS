@@ -49,8 +49,8 @@ declare class Utils {
     static dispatchEvent: typeof UtilsModule.eventUtils.dispatchEvent;
     static addEventListener: typeof UtilsModule.eventUtils.addEventListener;
     static removeEventListener: typeof UtilsModule.eventUtils.removeEventListener;
-    static debounce: typeof UtilsModule.executionUtils.debounce;
-    static throttle: typeof UtilsModule.executionUtils.throttle;
+    static debounce: typeof UtilsModule.executeUtils.debounce;
+    static throttle: typeof UtilsModule.executeUtils.throttle;
     static setLocalValue: typeof UtilsModule.storageUtils.setLocalValue;
     static getLocalValue: typeof UtilsModule.storageUtils.getLocalValue;
     static removeLocalValue: typeof UtilsModule.storageUtils.removeLocalValue;
