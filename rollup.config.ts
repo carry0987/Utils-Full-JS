@@ -1,16 +1,18 @@
+import { RollupOptions } from 'rollup';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import replace from '@rollup/plugin-replace';
-import resolve from '@rollup/plugin-node-resolve';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import { dts } from 'rollup-plugin-dts';
 import del from 'rollup-plugin-delete';
 import { createRequire } from 'module';
+
 const pkg = createRequire(import.meta.url)('./package.json');
-
 const isDts = process.env.BUILD === 'dts';
+const sourceFile = 'src/index.ts';
 
-const jsConfig = {
-    input: 'src/index.ts',
+const jsConfig: RollupOptions = {
+    input: sourceFile,
     output: [
         {
             file: pkg.main,
@@ -24,8 +26,8 @@ const jsConfig = {
         }
     ],
     plugins: [
-        resolve(),
         typescript(),
+        nodeResolve(),
         replace({
             preventAssignment: true,
             __version__: pkg.version
@@ -34,8 +36,8 @@ const jsConfig = {
 };
 
 // Configuration for generating the type definitions
-const dtsConfig = {
-    input: 'dist/dts/index.d.ts', // Use the TypeScript-generated declaration as input
+const dtsConfig: RollupOptions = {
+    input: sourceFile,
     output: {
         file: pkg.types,
         format: 'es'
