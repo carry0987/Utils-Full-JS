@@ -4,7 +4,6 @@ import terser from '@rollup/plugin-terser';
 import replace from '@rollup/plugin-replace';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import { dts } from 'rollup-plugin-dts';
-import del from 'rollup-plugin-delete';
 import { createRequire } from 'module';
 
 const pkg = createRequire(import.meta.url)('./package.json');
@@ -43,8 +42,7 @@ const dtsConfig: RollupOptions = {
         format: 'es'
     },
     plugins: [
-        dts(),
-        del({ hook: 'buildEnd', targets: 'dist/dts' }) // Clean up the d.ts file afterwards
+        dts()
     ]
 };
 
