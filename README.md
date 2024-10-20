@@ -4,7 +4,7 @@ A full library for `Utils` modules, include all methods from **[`@carry0987/util
 
 ## Installation
 ```bash
-npm i @carry0987/utils-full
+pnpm add @carry0987/utils-full
 ```
 
 Or you can just download the file [`utils-full.min.js`](dist/utils-full.min.js) and include it in your HTML file:
