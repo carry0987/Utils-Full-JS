@@ -1,4 +1,4 @@
-const version = '3.8.3';
+const version = '3.8.4';
 
 function reportError(...error) {
     console.error(...error);
@@ -407,6 +407,15 @@ function generateUUID() {
         const r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
         return v.toString(16);
     });
+}
+function isValidURL(url) {
+    try {
+        new URL(url); // Try to create a URL object
+        return true;
+    }
+    catch (_) {
+        return false; // If error, the URL is invalid
+    }
 }
 function getUrlParam(sParam, url = window.location.href) {
     const isHashParam = sParam.startsWith('#');
@@ -931,7 +940,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.5.3';
+    static version = '1.5.4';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
@@ -960,6 +969,7 @@ class Utils {
     static removeStylesheet = removeStylesheet;
     static generateRandom = generateRandom;
     static generateUUID = generateUUID;
+    static isValidURL = isValidURL;
     static getUrlParam = getUrlParam;
     static setUrlParam = setUrlParam;
     // domUtils

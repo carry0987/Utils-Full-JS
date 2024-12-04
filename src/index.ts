@@ -36,6 +36,7 @@ class Utils {
     static removeStylesheet: typeof UtilsModule.removeStylesheet = UtilsModule.removeStylesheet;
     static generateRandom: typeof UtilsModule.generateRandom = UtilsModule.generateRandom;
     static generateUUID: typeof UtilsModule.generateUUID = UtilsModule.generateUUID;
+    static isValidURL: typeof UtilsModule.isValidURL = UtilsModule.isValidURL;
     static getUrlParam: typeof UtilsModule.getUrlParam = UtilsModule.getUrlParam;
     static setUrlParam: typeof UtilsModule.setUrlParam = UtilsModule.setUrlParam;
     // domUtils

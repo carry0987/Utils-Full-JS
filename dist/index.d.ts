@@ -28,6 +28,7 @@ declare class Utils {
     static removeStylesheet: typeof UtilsModule.removeStylesheet;
     static generateRandom: typeof UtilsModule.generateRandom;
     static generateUUID: typeof UtilsModule.generateUUID;
+    static isValidURL: typeof UtilsModule.isValidURL;
     static getUrlParam: typeof UtilsModule.getUrlParam;
     static setUrlParam: typeof UtilsModule.setUrlParam;
     static getElem: typeof UtilsModule.domUtils.getElem;
