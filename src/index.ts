@@ -1,15 +1,16 @@
-import { Types, version as utilsVersion } from '@carry0987/utils';
+import { version as utilsVersion } from '@carry0987/utils';
+import type { Extension, ReplaceRule } from '@carry0987/utils/types';
 import * as UtilsModule from '@carry0987/utils';
 
 class Utils {
-    constructor(extension: Types.Extension) {
+    constructor(extension: Extension) {
         Object.assign(this, extension);
     }
 
     static version: string = '__version__';
     static utilsVersion: string = utilsVersion;
     static stylesheetId: string = UtilsModule.stylesheetId;
-    static replaceRule: Types.ReplaceRule = {
+    static replaceRule: ReplaceRule = {
         from: UtilsModule.replaceRule.from,
         to: UtilsModule.replaceRule.to
     };

@@ -1,12 +1,12 @@
+import { Extension, ReplaceRule } from '@carry0987/utils/types';
 import * as UtilsModule from '@carry0987/utils';
-import { Types } from '@carry0987/utils';
 
 declare class Utils {
-    constructor(extension: Types.Extension);
+    constructor(extension: Extension);
     static version: string;
     static utilsVersion: string;
     static stylesheetId: string;
-    static replaceRule: Types.ReplaceRule;
+    static replaceRule: ReplaceRule;
     static setStylesheetId: typeof UtilsModule.setStylesheetId;
     static setReplaceRule: typeof UtilsModule.setReplaceRule;
     static isObject: typeof UtilsModule.isObject;

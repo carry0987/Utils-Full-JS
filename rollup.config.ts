@@ -42,6 +42,7 @@ const dtsConfig: RollupOptions = {
         format: 'es'
     },
     plugins: [
+        nodeResolve(),
         dts()
     ]
 };

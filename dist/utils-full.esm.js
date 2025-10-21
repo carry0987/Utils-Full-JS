@@ -1,4 +1,4 @@
-const version = '3.8.6';
+const version = '3.9.1';
 
 function reportError(...error) {
     console.error(...error);
@@ -945,7 +945,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.5.6';
+    static version = '1.6.0';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
