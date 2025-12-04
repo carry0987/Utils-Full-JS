@@ -1,4 +1,4 @@
-const version = '3.9.2';
+const version = '3.9.3';
 
 function reportError(...error) {
     console.error(...error);
@@ -501,10 +501,12 @@ function setLocalValue(key, value, stringify = true) {
     window.localStorage.setItem(key, value);
 }
 function getLocalValue(key, parseJson = true) {
-    let value = window.localStorage.getItem(key);
+    const value = window.localStorage.getItem(key);
+    if (value === null)
+        return null;
     if (parseJson) {
         try {
-            value = JSON.parse(value);
+            return JSON.parse(value);
         }
         catch (e) {
             reportError('Error while parsing stored json value: ', e);
@@ -522,10 +524,12 @@ function setSessionValue(key, value, stringify = true) {
     window.sessionStorage.setItem(key, value);
 }
 function getSessionValue(key, parseJson = true) {
-    let value = window.sessionStorage.getItem(key);
+    const value = window.sessionStorage.getItem(key);
+    if (value === null)
+        return null;
     if (parseJson) {
         try {
-            value = JSON.parse(value);
+            return JSON.parse(value);
         }
         catch (e) {
             reportError('Error while parsing stored json value: ', e);
@@ -945,7 +949,7 @@ class Utils {
     constructor(extension) {
         Object.assign(this, extension);
     }
-    static version = '1.6.1';
+    static version = '1.6.2';
     static utilsVersion = version;
     static stylesheetId = stylesheetId;
     static replaceRule = {
