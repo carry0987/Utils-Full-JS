@@ -30,7 +30,9 @@ declare class Utils {
     static generateUUID: typeof UtilsModule.generateUUID;
     static isValidURL: typeof UtilsModule.isValidURL;
     static getUrlParam: typeof UtilsModule.getUrlParam;
+    static getHashParam: typeof UtilsModule.getHashParam;
     static setUrlParam: typeof UtilsModule.setUrlParam;
+    static setHashParam: typeof UtilsModule.setHashParam;
     static getElem: typeof UtilsModule.domUtils.getElem;
     static createElem: typeof UtilsModule.domUtils.createElem;
     static insertAfter: typeof UtilsModule.domUtils.insertAfter;

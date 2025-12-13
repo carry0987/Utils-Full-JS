@@ -39,7 +39,9 @@ class Utils {
     static generateUUID: typeof UtilsModule.generateUUID = UtilsModule.generateUUID;
     static isValidURL: typeof UtilsModule.isValidURL = UtilsModule.isValidURL;
     static getUrlParam: typeof UtilsModule.getUrlParam = UtilsModule.getUrlParam;
+    static getHashParam: typeof UtilsModule.getHashParam = UtilsModule.getHashParam;
     static setUrlParam: typeof UtilsModule.setUrlParam = UtilsModule.setUrlParam;
+    static setHashParam: typeof UtilsModule.setHashParam = UtilsModule.setHashParam;
     // domUtils
     static getElem: typeof UtilsModule.domUtils.getElem = UtilsModule.domUtils.getElem;
     static createElem: typeof UtilsModule.domUtils.createElem = UtilsModule.domUtils.createElem;
