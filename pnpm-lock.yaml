@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@carry0987/utils':
-        specifier: ^3.10.0
-        version: 3.10.0
+        specifier: ^3.10.1
+        version: 3.10.1
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.3
         version: 16.0.3(rollup@4.53.3)
@@ -46,8 +46,8 @@ packages:
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
     engines: {node: '>=6.9.0'}
 
-  '@carry0987/utils@3.10.0':
-    resolution: {integrity: sha512-CX9lXNUBhvoChLEvTPgSbfICBGptXQTiTvtNmcCm8DDOCX/wDWNNL6Dx5YpQrPj6nLzjCpGm+2Y4923R7rAQQw==}
+  '@carry0987/utils@3.10.1':
+    resolution: {integrity: sha512-xEpgitFpJRGTSJHb1p15p28TIXXIuvVd1EnqMOdCRPofuEgytHyaqiMzI9JgbdlrBgdqTTP+jIFOJZvbGSSXMw==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -354,7 +354,7 @@ snapshots:
   '@babel/helper-validator-identifier@7.28.5':
     optional: true
 
-  '@carry0987/utils@3.10.0': {}
+  '@carry0987/utils@3.10.1': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
