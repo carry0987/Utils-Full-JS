@@ -11,7 +11,7 @@
 <body class="container">
     <div class="d-flex flex-column justify-content-center align-items-center">
         <div id="app">
-            <h1 class="mb-3 text-center"></h1>
+            <h1 class="mb-3 text-center">Utils</h1>
         </div>
         <div id="demo-log" class="bg-light bg-gradient p-1 rounded w-50 w-sm-auto">
             <pre class="mb-0"><code></code></pre>
@@ -19,11 +19,11 @@
     </div>
     <script src="dist/utils-full.min.js"></script>
     <script type="text/javascript">
-    let util = new Utils({
+    const util = new Utils({
         ll: (msg, data = null) => {
             console.log(msg);
             if (data) console.log(data);
-            let demoLog = Utils.getElem('#demo-log pre > code');
+            const demoLog = Utils.getElem('#demo-log pre > code');
             if (demoLog) {
                 demoLog.innerHTML += msg instanceof Object ? `${JSON.stringify(msg, null, 4)}\n\n` : `${msg}\n\n`;
                 if (data) {
@@ -37,7 +37,7 @@
     Utils.insertAfter(Utils.getElem('#app h1.mb-3'), `<h2 class="mb-3">Utils-Full v${Utils.version}</h2>`);
     Utils.insertAfter(Utils.getElem('#app h2.mb-3'), `<h2 class="mb-3 text-center">Core v${Utils.utilsVersion}</h2>`);
     Utils.addClass(Utils.getElem('#app h2.mb-3'), 'text-center');
-    let styles = {
+    const styles = {
         h1: {
             color: '#818181',
             fontSize: '50px'

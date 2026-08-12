@@ -7,11 +7,9 @@
     "importHelpers": true,
     "strict": true,
     "outDir": "dist",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"]
   },
-  "include": [
-    "src/**/*",
-    "rollup.config.ts"
-  ],
+  "include": ["src/**/*", "rolldown.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
