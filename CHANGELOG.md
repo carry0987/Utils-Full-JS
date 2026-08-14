@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/carry0987/Utils-Full-JS/compare/v2.0.0...v2.0.1) (2026-08-14)
+
+
+### Bug Fixes
+
+* **deps:** Update packages ([03c0992](https://github.com/carry0987/Utils-Full-JS/commit/03c099299dc00f60accb44301fc53519a6213175))
+
 ## 2.0.0 (2026-08-12)
 
 
