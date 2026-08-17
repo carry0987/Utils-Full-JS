@@ -1,6 +1,6 @@
 {
   "name": "@carry0987/utils-full",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A full library for Utils modules, include all methods from @carry0987/utils",
   "type": "module",
   "main": "dist/utils-full.min.js",
