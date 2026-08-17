@@ -36,6 +36,7 @@ const dtsConfig: RolldownOptions = {
 const jsConfigs: RolldownOptions[] = [
     {
         input: sourceFile,
+        platform: 'browser',
         tsconfig,
         output: {
             codeSplitting: false,
@@ -49,6 +50,7 @@ const jsConfigs: RolldownOptions[] = [
     },
     {
         input: sourceFile,
+        platform: 'browser',
         tsconfig,
         output: {
             codeSplitting: false,

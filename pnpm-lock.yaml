@@ -12,8 +12,8 @@ importers:
         specifier: ^2.5.8
         version: 2.5.8
       '@carry0987/utils':
-        specifier: ^4.0.1
-        version: 4.0.1
+        specifier: ^4.1.0
+        version: 4.1.0
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
@@ -86,8 +86,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@carry0987/utils@4.0.1':
-    resolution: {integrity: sha512-NvEb2YtauyKXAHQ77PewQOjPzB7/2pIAOCSeaSzW9ltXyXLkpaiEj2PcQuBq7KWZIIShbgHH+R4nM7sMWsq/yQ==}
+  '@carry0987/utils@4.1.0':
+    resolution: {integrity: sha512-3qcpjC3rwBEwT08tyAm8sSjGf+lPwHT+0EaP6Q5/bqiq0P7zsy9CqbubUtpiGKEfVLniS84YvyxCbGSi6SY+Pw==}
 
   '@oxc-project/types@0.144.0':
     resolution: {integrity: sha512-nuhZIOLuI6TFQ32I/WnUx+SCPY7SdSKwgnFHydAuoS1+Z4BRcaP+RRJmGzl9lw+0OFF7UmaESf7KQRXaNLHypg==}
@@ -424,7 +424,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.8':
     optional: true
 
-  '@carry0987/utils@4.0.1': {}
+  '@carry0987/utils@4.1.0': {}
 
   '@oxc-project/types@0.144.0': {}
 

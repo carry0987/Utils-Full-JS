@@ -7,7 +7,14 @@ class Utils {
     }
 }
 
-type UtilsConstructor = typeof Utils &
+type UtilsInstance<T extends Extension> = Utils & T;
+
+type UtilsClass = {
+    new <T extends Extension>(extension: T): UtilsInstance<T>;
+    prototype: Utils;
+};
+
+type UtilsConstructor = UtilsClass &
     typeof UtilsModule & {
         readonly version: string;
         readonly utilsVersion: string;
@@ -15,7 +22,7 @@ type UtilsConstructor = typeof Utils &
         readonly replaceRule: typeof UtilsModule.replaceRule;
     };
 
-const UtilsWithStatics = Object.assign(Utils, UtilsModule) as UtilsConstructor;
+const UtilsWithStatics = Object.assign(Utils as UtilsClass, UtilsModule) as UtilsConstructor;
 
 Object.defineProperties(UtilsWithStatics, {
     version: {
