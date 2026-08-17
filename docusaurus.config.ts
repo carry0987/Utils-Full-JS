@@ -35,7 +35,7 @@ const config: Config = {
             tagName: 'meta',
             attributes: {
                 name: 'algolia-site-verification',
-                content: '657B95F77F96C774',
+                content: '561738E61B6C302E',
             },
         },
     ],
@@ -150,6 +150,16 @@ const config: Config = {
         liveCodeBlock: {
             playgroundPosition: 'bottom',
         },
+        algolia: {
+            appId: 'Y5JTTYTBGG',
+            apiKey: '0b07c7bfaa04f91821ebba63bfb17e66',
+            indexName: 'Utils-Full-JS Index',
+            contextualSearch: true,
+            externalUrlRegex: 'external\\.com|domain\\.com',
+            searchParameters: {},
+            searchPagePath: 'search',
+            insights: false,
+        }
     } satisfies Preset.ThemeConfig,
     themes: ['@docusaurus/theme-live-codeblock'],
 };
