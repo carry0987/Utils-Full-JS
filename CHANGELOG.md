@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/carry0987/Utils-Full-JS/compare/v2.1.1...v2.1.2) (2026-09-30)
+
+
+### Bug Fixes
+
+* **deps:** exempt utils from minimum release age ([345b4f4](https://github.com/carry0987/Utils-Full-JS/commit/345b4f4b5e63076135afadb8b0b1b38829d0966b))
+
 ## [2.1.1](https://github.com/carry0987/Utils-Full-JS/compare/v2.1.0...v2.1.1) (2026-09-30)
 
 
