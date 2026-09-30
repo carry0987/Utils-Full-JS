@@ -1,0 +1,2 @@
+minimumReleaseAgeExclude:
+  - '@carry0987/utils@4.2.0'
