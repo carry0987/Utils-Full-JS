@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/carry0987/Utils-Full-JS/compare/v2.1.0...v2.1.1) (2026-09-30)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependencies ([e5dc7d4](https://github.com/carry0987/Utils-Full-JS/commit/e5dc7d489a33ace234ccc416e8610dd96c1acad8))
+
 ## [2.1.0](https://github.com/carry0987/Utils-Full-JS/compare/v2.0.1...v2.1.0) (2026-08-17)
 
 
